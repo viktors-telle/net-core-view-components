@@ -1,0 +1,19 @@
+﻿@page
+@model ViewComponents.Pages.ConversationalFormModel
+@{
+    ViewData["Title"] = "ConversationalForms";
+}
+
+<h2>ConversationalForms</h2>
+
+@await Component.InvokeAsync(Model.ViewComponentName, new { value = "" })
+
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Id" type="hidden" />    
+
+    <div>
+        <button type="submit">Continue</button>
+    </div>
+</form>
