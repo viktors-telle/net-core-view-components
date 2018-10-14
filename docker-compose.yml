@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  viewcomponents:
-    image: ${DOCKER_REGISTRY}viewcomponents
-    build:
-      context: .
-      dockerfile: ViewComponents/Dockerfile
