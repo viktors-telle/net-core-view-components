@@ -2,40 +2,29 @@
 using System;
 using System.Collections.Generic;
 using ViewComponents.Models;
+using ViewComponents.Services;
 
 namespace ViewComponents.Pages.Components.RadioButtonList
 {
     public class RadioButtonListViewComponent : ViewComponent
     {
+        private readonly IViewComponentDataRetrievalService<List<RadioButton>> _viewComponentDataRetrievalService;
+
         public RadioButtonListViewModel ViewModel { get; set; }
 
-        public RadioButtonListViewComponent() { }        
+        public RadioButtonListViewComponent(IViewComponentDataRetrievalService<List<RadioButton>> viewComponentDataRetrievalService)
+        {
+            _viewComponentDataRetrievalService = viewComponentDataRetrievalService;
+        }        
 
         public IViewComponentResult Invoke(Guid id)
         {
+            var items = _viewComponentDataRetrievalService.GetData(id);
             ViewModel = new RadioButtonListViewModel
             {
                 Id = id,
-                Items = new List<RadioButton>()
-            };
-
-            ViewModel.Items.Add(new RadioButton
-            {
-                Id = "First",
-                Name = "First choice"
-            });
-
-            ViewModel.Items.Add(new RadioButton
-            {
-                Id = "Second",
-                Name = "Second choice"
-            });
-
-            ViewModel.Items.Add(new RadioButton
-            {
-                Id = "Third",
-                Name = "Third choice"
-            });
+                Items = items
+            };           
 
             return View("Default", ViewModel);
         }

@@ -5,6 +5,11 @@ namespace ViewComponents.Models
 {
     public class RadioButtonListViewModel
     {
+        public RadioButtonListViewModel()
+        {
+            Items = new List<RadioButton>();
+        }
+
         public Guid Id { get; set; }
 
         public List<RadioButton> Items { get; set; }
