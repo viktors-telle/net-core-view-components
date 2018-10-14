@@ -1,10 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ViewComponents.Extensions;
 
 namespace ViewComponents.Pages
 {
     public class ConversationalFormModel : PageModel
     {
+        private readonly List<string> _componentNames = new List<string>()
+        {
+            "CheckBoxList",
+            "RadioButtonList"
+        };
+
         public string ViewComponentName { get; set; }
 
         public Guid Id { get; set; }
@@ -17,7 +25,12 @@ namespace ViewComponents.Pages
             }
 
             // TODO: Fetch next component from service.
-            ViewComponentName = "CheckBoxList";
+            ViewComponentName = GetNextComponent();
+        }
+
+        private string GetNextComponent()
+        {
+            return _componentNames.RandomElement();
         }
     }
 }

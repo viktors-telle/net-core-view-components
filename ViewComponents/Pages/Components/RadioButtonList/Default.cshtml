@@ -1,3 +1,16 @@
-﻿@model string
+﻿@model ViewComponents.Models.RadioButtonListViewModel
 
 <h2>Radio button list</h2>
+
+<form method="post" action="radiobuttonlist">
+    @foreach (var item in Model.Items)
+    {
+        <input asp-for="SelectedItem" type="radio" value="@item.Id" /> @item.Name
+    }
+    <input asp-for="Id" type="hidden" />
+    @Html.AntiForgeryToken()
+
+    <div>
+        <input type="submit" name="Continue" value="Continue" />
+    </div>
+</form>

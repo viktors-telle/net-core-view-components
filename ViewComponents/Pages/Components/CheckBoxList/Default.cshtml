@@ -2,7 +2,7 @@
 
 <h2>Checkbox list</h2>
 
-<form id="checkboxlist" method="post" action="checkboxlist">
+<form method="post" action="checkboxlist">
     @for (int i = 0; i < Model.Items.Count(); i++)
     {
         <input type="checkbox" asp-for="@Model.Items[i].Selected" />
