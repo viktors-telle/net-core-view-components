@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ViewComponents.Pages.Components.RadioButtonList
 {
@@ -6,9 +7,9 @@ namespace ViewComponents.Pages.Components.RadioButtonList
     {
         public RadioButtonListViewComponent() { }
 
-        public IViewComponentResult Invoke(string value)
+        public IViewComponentResult Invoke(Guid id)
         {
-            return View("Default", value);
+            return View("Default");
         }
     }
 }

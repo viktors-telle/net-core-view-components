@@ -1,4 +1,19 @@
-﻿@model string
+﻿@model ViewComponents.Models.CheckBoxListViewModel
 
 <h2>Checkbox list</h2>
-<p>@Model</p>
+
+<form id="checkboxlist" method="post" action="checkboxlist">
+    @for (int i = 0; i < Model.Items.Count(); i++)
+    {
+        <input type="checkbox" asp-for="@Model.Items[i].Selected" />
+        <label asp-for="@Model.Items[i].Selected">@Model.Items[i].Name</label>
+        <input type="hidden" asp-for="@Model.Items[i].Id" />
+        <input type="hidden" asp-for="@Model.Items[i].Name" />
+    }
+
+    <input asp-for="Id" type="hidden" />
+    @Html.AntiForgeryToken()
+    <div>
+        <button type="submit" name="action">Continue</button>
+    </div>
+</form>
