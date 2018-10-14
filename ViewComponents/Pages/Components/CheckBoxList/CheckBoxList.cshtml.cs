@@ -6,6 +6,7 @@ namespace ViewComponents.Pages
 {
     public class CheckBoxListModel : PageModel
     {
+        // TODO: Inject configuration via IOptions<> interface.
         public void OnGet()
         {           
         }
