@@ -2,7 +2,7 @@
 
 <h2>Radio button list</h2>
 
-<form method="post" action="radiobuttonlist">
+<form method="post" action="components/radiobuttonlist/radiobuttonlist">
     @foreach (var item in Model.Items)
     {
         <input asp-for="SelectedItem" type="radio" value="@item.Id" /> @item.Name
