@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace ViewComponents.Services
+﻿namespace ViewComponents.Services
 {
-    public interface IViewComponentDataRetrievalService<T> where T : class
+    public interface IViewComponentDataRetrievalService<O, I> 
+        where O : class         
     {
-        T GetData(Guid id);
+        O GetData(I input);
     }
 }

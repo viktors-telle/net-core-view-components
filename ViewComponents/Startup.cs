@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,11 +30,14 @@ namespace ViewComponents
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddScoped(typeof(IViewComponentDataRetrievalService<List<CheckBox>>), typeof(CheckBoxListViewComponentDataRetrievalService));
-            services.AddScoped(typeof(IViewComponentDataRetrievalService<List<RadioButton>>), typeof(RadioButtonListViewComponentDataRetrievalService));
+            services.AddScoped(
+                typeof(IViewComponentDataRetrievalService<List<CheckBox>, Guid>), 
+                typeof(CheckBoxListViewComponentDataRetrievalService));
+            services.AddScoped(
+                typeof(IViewComponentDataRetrievalService<List<RadioButton>, Guid>), 
+                typeof(RadioButtonListViewComponentDataRetrievalService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

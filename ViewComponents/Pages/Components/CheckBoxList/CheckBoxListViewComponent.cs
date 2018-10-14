@@ -8,18 +8,17 @@ namespace ViewComponents.Pages.Components.RadioButtonList
 {
     public class CheckBoxListViewComponent : ViewComponent
     {
-        private readonly IViewComponentDataRetrievalService<List<CheckBox>> _viewComponentDataRetrievalService;
+        private readonly IViewComponentDataRetrievalService<List<CheckBox>, Guid> _viewComponentDataRetrievalService;
 
         public CheckBoxListViewModel ViewModel { get; set; }
 
-        public CheckBoxListViewComponent(IViewComponentDataRetrievalService<List<CheckBox>> viewComponentDataRetrievalService)
+        public CheckBoxListViewComponent(IViewComponentDataRetrievalService<List<CheckBox>, Guid> viewComponentDataRetrievalService)
         {
             _viewComponentDataRetrievalService = viewComponentDataRetrievalService;
         }
 
         public IViewComponentResult Invoke(Guid id)
         {
-            // TODO: Inject service and call it to fetch data.
             var items = _viewComponentDataRetrievalService.GetData(id);
             ViewModel = new CheckBoxListViewModel
             {

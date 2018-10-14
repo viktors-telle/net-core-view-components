@@ -4,7 +4,7 @@ using ViewComponents.Models;
 
 namespace ViewComponents.Services
 {
-    public class CheckBoxListViewComponentDataRetrievalService : IViewComponentDataRetrievalService<List<CheckBox>>
+    public class CheckBoxListViewComponentDataRetrievalService : IViewComponentDataRetrievalService<List<CheckBox>, Guid>
     {
         public List<CheckBox> GetData(Guid id)
         {

@@ -8,11 +8,11 @@ namespace ViewComponents.Pages.Components.RadioButtonList
 {
     public class RadioButtonListViewComponent : ViewComponent
     {
-        private readonly IViewComponentDataRetrievalService<List<RadioButton>> _viewComponentDataRetrievalService;
+        private readonly IViewComponentDataRetrievalService<List<RadioButton>, Guid> _viewComponentDataRetrievalService;
 
         public RadioButtonListViewModel ViewModel { get; set; }
 
-        public RadioButtonListViewComponent(IViewComponentDataRetrievalService<List<RadioButton>> viewComponentDataRetrievalService)
+        public RadioButtonListViewComponent(IViewComponentDataRetrievalService<List<RadioButton>, Guid> viewComponentDataRetrievalService)
         {
             _viewComponentDataRetrievalService = viewComponentDataRetrievalService;
         }        

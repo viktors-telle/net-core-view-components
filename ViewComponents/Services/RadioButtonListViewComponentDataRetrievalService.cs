@@ -4,7 +4,7 @@ using ViewComponents.Models;
 
 namespace ViewComponents.Services
 {
-    public class RadioButtonListViewComponentDataRetrievalService : IViewComponentDataRetrievalService<List<RadioButton>>
+    public class RadioButtonListViewComponentDataRetrievalService : IViewComponentDataRetrievalService<List<RadioButton>, Guid>
     {
         public List<RadioButton> GetData(Guid id)
         {
