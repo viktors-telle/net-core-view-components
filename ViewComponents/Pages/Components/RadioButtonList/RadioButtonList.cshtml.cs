@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ViewComponents.Models;
 
-namespace ViewComponents.Pages
+namespace ViewComponents.Pages.Components.RadioButtonList
 {
     public class RadioButtonListModel : PageModel
     {

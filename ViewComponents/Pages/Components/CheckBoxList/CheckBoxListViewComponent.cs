@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using ViewComponents.Models;
 using ViewComponents.Services;
 
-namespace ViewComponents.Pages.Components.RadioButtonList
+namespace ViewComponents.Pages.Components.CheckBoxList
 {
     public class CheckBoxListViewComponent : ViewComponent
     {

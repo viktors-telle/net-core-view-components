@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ViewComponents.Models;
 
-namespace ViewComponents.Pages
+namespace ViewComponents.Pages.Components.CheckBoxList
 {
     public class CheckBoxListModel : PageModel
     {
