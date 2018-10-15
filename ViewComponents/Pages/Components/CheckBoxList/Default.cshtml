@@ -3,7 +3,7 @@
 <h2>Checkbox list</h2>
 
 <form method="post" action="components/checkboxlist/checkboxlist">
-    @for (int i = 0; i < Model.Items.Count(); i++)
+    @for (int i = 0; i < Model.Items.Count; i++)
     {
         <input type="checkbox" asp-for="@Model.Items[i].Selected" />
         <label asp-for="@Model.Items[i].Selected">@Model.Items[i].Name</label>
@@ -13,7 +13,8 @@
 
     <input asp-for="Id" type="hidden" />
     @Html.AntiForgeryToken()
+
     <div>
-        <button type="submit" name="action">Continue</button>
+        <input type="submit" name="Continue" value="Continue" />
     </div>
 </form>
